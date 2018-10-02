@@ -1,12 +1,13 @@
-x=$(./vec_sum)
-z=$(echo $x + 1 | bc -l)
+
+bash regex.sh vec_sum.cu
+
 sum=0
 k=0
 declare -a arr
 
 while [ $k -lt 5 ] 
 do 	
-	arr[$k]=$(./vec_sum)
+	arr[$k]=$(./$1)
 	k=$(expr $k + 1)
 done
 for i in ${arr[@]}
@@ -15,7 +16,7 @@ do
 	
 done
 ans=$(echo $sum| bc -l)
-ans_fin=$(echo $ans + 1 | bc -l)
-echo $ans_fin
+ans_fin=$(echo $ans/$k | bc -l) 
+printf "Average: %.8f\n" $ans_fin 
 
  

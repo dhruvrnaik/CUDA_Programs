@@ -17,7 +17,7 @@ int main()
 	}
 	t = clock();
 	add(a,b,c,k);
-	printf("%d",c[0]);
+
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds  
     printf("\n%f", time_taken);
